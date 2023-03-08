@@ -9,7 +9,9 @@
 
     <ul>
         {% for entry in entries %}
-            <li><a href="wiki/{{entry}}" >{{ entry }}</a></li>
+            <li><a href = "/wiki/{{ entry }}">{{ entry }}</a></li>
+            {% empty %}
+                <p>Nothing Found</p>
         {% endfor %}
     </ul>
 

@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{name}}
+{% endblock title%}
+
+
+
+{% block body %}
+    {% if name not in entries %}
+        {{html|safe}}
+    {% else %}
+        {{html | safe}}
+        <a href="{{ name }}/edite"><p class="edite">* Edite Page</p></a>
+    {% endif %}
+{% endblock %}
