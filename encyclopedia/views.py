@@ -31,7 +31,7 @@ def MtoH(request, name):
     context={
         "html":change(name),  "name":name, "entries":entrys
     }
-    return render(request, "encyclopedia/mult.html",context)
+    return render(request, "encyclopedia/details.html",context)
 
 def New(request):
     if request.method == "POST":
