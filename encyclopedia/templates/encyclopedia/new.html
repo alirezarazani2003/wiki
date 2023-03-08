@@ -8,56 +8,70 @@
             width:600px;
             height:400px;
             position:relative;
-            top:0px;
-            right:0px;
-            left:10px;
+            top:50px;
+            right:180px;
             border-radius:8px;
+            border:thin solid rgb(199, 199, 199);
+            
+        }
+        .title{
+            position:relative;
+            bottom:370px;
+            left:13px;
+            margin-bottom:10px;
+            border-radius:6px;
             border:thin solid rgb(199, 199, 199);
             
         }
         h1{
             position:relative;
-            left:0px;
+            left:4px;
             padding:10px;
         }
         .content:hover{
+            box-shadow: 1px 1px 3px 0px rgb(201, 201, 201);
+        }
+        .title:hover{
             box-shadow: 1px 1px 3px 0px rgb(201, 201, 201);
         }
         .content:focus{
             outline:0;
             box-shadow: 1px 1px 3px 0px rgb(201, 201, 201);
         }
-        p{
-            font-size :20px ;
-            
-            position:relative;
-            left:12px;
-            bottom:3px;
-            font-weight: bolder;
+        .title:focus{
+            outline:0;
+            box-shadow: 0px 0px 3px 0px rgb(177, 174, 174);
         }
+        p{
+            position:relative;
+            top : 50px;
+            left : 15px;
+            color: red;
+            size : 15px;
+        }
+
         .button{
             
             padding-left:15px;
             padding-right:15px;
             padding-bottom:2px;
             border-radius:5px;
-            background-color: #ffffff;
+            background-color: #007bff;
             color: white;
             border:None;
             position:relative;
-            right:95px;
-            top:30px;
+            right:286px;
+            top:79px;
         }
         .button:hover{
             box-shadow: 2px 3px 3px 0px rgb(201, 201, 201);
         }
 
-
     </style>
 {% endblock %}
 
 {% block title %}
-    Edite Page
+    Create New Page
 {% endblock %}
 
 {% block body %}
@@ -65,9 +79,10 @@
 
    <form action="" method="post">
         {% csrf_token %}
-        <p>Title : {{ head }}</p>
-        <textarea name="textarea" class="content">{{body}}</textarea>
-        <button type="submit" class="button" >Save Page</button>
+        {% render_field new.title type="text" class="title"  placeholder="Title" %}
+        {% render_field new.content type="text" class="content" placeholder="Content" %}
+        <button type="submit" class="button">Save Page</button>
+        
    </form>
    <p>{{Error}}</p>
 

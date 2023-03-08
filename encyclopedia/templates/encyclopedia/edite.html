@@ -41,13 +41,14 @@
             padding-right:15px;
             padding-bottom:2px;
             border-radius:5px;
-            background-color: #ffffff;
+            background-color:#007bff;
             color: white;
             border:None;
             position:relative;
             right:95px;
             top:30px;
         }
+        
         .button:hover{
             box-shadow: 2px 3px 3px 0px rgb(201, 201, 201);
         }
@@ -61,13 +62,14 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Create New Page</h1>
+    <h1>Edit Existed Page</h1>
 
    <form action="" method="post">
         {% csrf_token %}
         <p>Title : {{ head }}</p>
         <textarea name="textarea" class="content">{{body}}</textarea>
         <button type="submit" class="button" >Save Page</button>
+        
    </form>
    <p>{{Error}}</p>
 
