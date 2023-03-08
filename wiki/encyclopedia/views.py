@@ -19,7 +19,6 @@ def change(name):
 
 def index(request):
     entrys = util.list_entries()
-    entrys.remove('Error')
     if request.method == "POST":
         cd = request.POST['q']
         entrys = filter(lambda x : x.upper().find(cd.upper())!=-1 ,entrys)
@@ -65,6 +64,5 @@ def edite(request,name):
 
 def random1(request):
     entries = util.list_entries()
-    entries.remove('Error')
     name = random.choice(entries)
     return HttpResponseRedirect(reverse("encl:mtoh", args=(name,)))

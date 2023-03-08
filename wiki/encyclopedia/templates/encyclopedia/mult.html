@@ -1,5 +1,19 @@
 {% extends "encyclopedia/layout.html" %}
-
+{% block css %}
+.button{
+            
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:2px;
+    border-radius:5px;
+    background-color: #007bff;
+    color: white;
+    border:None;
+    position:relative;
+    right:286px;
+    top:79px;
+}
+{% endblock css %}
 {% block title %}
     {{name}}
 {% endblock title%}
@@ -11,6 +25,6 @@
         {{html|safe}}
     {% else %}
         {{html | safe}}
-        <a href="{{ name }}/edite"><p class="edite">* Edite Page</p></a>
+        <a href="{{ name }}/edite"><p class="button"> Edite Page</p></a>
     {% endif %}
 {% endblock %}
